@@ -35,5 +35,44 @@ public class BoardService {
 		return result;
 	}
 	
+	public int create(Board vo) {
+		int result = 0;
+		try {
+			result = boardDao.create(vo);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public Board selectBoardOne(int board_no) {
+		Board  vo = new Board();
+		try {
+			vo = boardDao.selectBoardOne(board_no);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return vo;
+	}
+	
+	public int updateBoard(Board vo) {
+		int result = 0;
+		try {
+			result = boardDao.updateBoard(vo);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public int deleteBoard(int board_no) {
+		int result = 0;
+		try {
+			result = boardDao.deleteBoard(board_no);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }
