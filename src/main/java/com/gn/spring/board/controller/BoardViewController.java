@@ -50,6 +50,12 @@ public class BoardViewController {
 		return "/board/list";
 	}
 	
+	@GetMapping("/board/create")
+	public String createBoardPage() {
+		// /WEB-INF/views/board/create.jsp
+		return "/board/create";
+	}
+	
 	
 }
 		

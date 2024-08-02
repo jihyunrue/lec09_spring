@@ -8,7 +8,10 @@ id="WebApp_ID" version="4.0">
  <!-- 가장 먼저 읽혀야 하는 xml 문서 경로 설정 -->
  <context-param>
  	<param-name>contextConfigLocation</param-name>
- 	<param-value>/WEB-INF/spring/root-context.xml</param-value>
+ 	<param-value>
+ 	/WEB-INF/spring/root-context.xml
+ 	/WEB-INF/spring/file-context.xml
+ 	</param-value>
  </context-param>
  <!-- 가장 먼저 읽혀야 하는 xml 문서를 읽는 클래스 설정 -->
  <listener>
