@@ -100,7 +100,7 @@ public class BoardApiController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/board/{board_no}")
+	@PostMapping("/board/{board_no}/delete")
 	public  Map<String,String> deleteBoard(Board vo, int board_no,
 			@RequestParam("file") MultipartFile file) {
 		String saveFileName = uploadFileService.upload(file);
@@ -115,9 +115,8 @@ public class BoardApiController {
 			vo.setOri_thumbnail(file.getOriginalFilename());
 			vo.setNew_thumbnail(saveFileName);
 			
-		LOGGER.info("Board 데이터 : "+vo);
-		// BoardService 의존성 주입
-		// service -> dao -> mapper 게시글 insert
+		
+		
 		int result = boardService.deleteBoard(board_no);
 		if(result > 0) {
 			resultMap.put("res_code","200");

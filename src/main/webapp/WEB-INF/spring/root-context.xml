@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/chema/aop"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	https://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -19,4 +20,16 @@
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"/>
 	</bean>
+	
+	<!-- 
+		* aop 관련 설정 
+		1.횡단 관심사(공통으로 실행해야 하는 메소드)를 구현해놓은 클래스
+		2.pointcut(대상), 시점(advisor)	
+	-->
+	
+	
+	
+	
+		
+	
 </beans>
