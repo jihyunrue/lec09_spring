@@ -16,4 +16,6 @@ public class MemberViewController {
 	public String joinPage() {
 		return "member/join";
 	}
+	
+
 }
