@@ -20,8 +20,7 @@ import com.gn.spring.board.model.vo.Board;
 @Controller
 public class BoardApiController {
 	
-	private static final Logger LOGGER
-	=LogManager.getLogger(BoardApiController.class);
+	
 	
 	@Autowired
 	UploadFileService uploadFileService;
@@ -38,7 +37,7 @@ public class BoardApiController {
 	public  Map<String,String> createBoard(Board vo,
 			@RequestParam("file") MultipartFile file){
 		
-		//LOGGER.info("file 데이터 : " + file.getOriginalFilename());
+		
 		// 2. 게시글 정보, 파일정보 DB에 등록
 		String saveFileName = uploadFileService.upload(file);
 
@@ -50,7 +49,7 @@ public class BoardApiController {
 			vo.setOri_thumbnail(file.getOriginalFilename());
 			vo.setNew_thumbnail(saveFileName);
 			
-		LOGGER.info("Board 데이터 : "+vo);
+		
 		// BoardService 의존성 주입
 		// service -> dao -> mapper 게시글 insert
 		int result = boardService.create(vo);
@@ -74,8 +73,7 @@ public class BoardApiController {
 		Map<String,String> resultMap = new HashMap<String,String>();
 		resultMap.put("res_code", "");
 		resultMap.put("res_msg", "게시글  수정중 오류가 발생하였습니다.");
-		LOGGER.info("Board 데이터 : "+vo);
-		LOGGER.info("File 데이터 : "+file.getOriginalFilename());
+		
 		if(file != null && !"".equals(file.getOriginalFilename())) {
 			
 			vo.setOri_thumbnail(file.getOriginalFilename());
@@ -108,8 +106,7 @@ public class BoardApiController {
 		Map<String,String> resultMap = new HashMap<String,String>();
 		resultMap.put("res_code", "");
 		resultMap.put("res_msg", "게시글  삭제중 오류가 발생하였습니다.");
-		LOGGER.info("Board 데이터 : "+vo);
-		LOGGER.info("File 데이터 : "+file.getOriginalFilename());
+		
 		if(!"".equals(saveFileName)) {
 			
 			vo.setOri_thumbnail(file.getOriginalFilename());

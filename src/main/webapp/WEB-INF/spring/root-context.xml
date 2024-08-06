@@ -29,14 +29,16 @@
 		2.pointcut(대상), 시점(advisor)	
 	-->
 	<!-- xml방식으로 aop 설정 -->
-	<bean id="logginService" class="com.gn.spring.common.aop.LoggerService"/>
+	<!-- <bean id="logginService" class="com.gn.spring.common.aop.LoggerService"/>
 	<aop:config>
 		<aop:aspect ref="logginService">
 			<aop:pointcut expression="execution(* com.gn.spring..*(..))" id="pt"/>
 			<aop:before method="loggerBefore" pointcut-ref="pt"/>
 			<aop:after method="loggerAfter" pointcut-ref="pt"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:config> -->
+	<!-- 어노테이션 방식으로 aop 사용  -->
+	<aop:aspectj-autoproxy/>
 	
 	
 	
