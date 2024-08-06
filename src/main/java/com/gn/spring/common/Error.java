@@ -11,3 +11,4 @@ public class Error {
 		return "error/404";
 	}
 }
+

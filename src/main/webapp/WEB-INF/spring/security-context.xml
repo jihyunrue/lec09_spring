@@ -52,7 +52,17 @@
 	<logout
 	logout-url ="/logout"
 	logout-success-url="/"
-	delete-cookies="JESSIONID"/>
+	delete-cookies="JESSIONID, remember-me"/>
+	
+	<!--
+	  token-validity-seconds : 쿠키 지속 시간 
+	  하루 : 86400
+	  일주일 : 하루*7
+	  -->
+	<remember-me
+		token-validity-seconds="604800"
+		data-source-ref="dataSource"/>
+	
 	</http>
 	
 	<!-- Spring Security에서 비밀번호 암호화 로직 담당 Bean 등록 -->
