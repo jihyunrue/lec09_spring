@@ -26,6 +26,10 @@
 					
 				<!-- 인증된 유저만 접근 가능 : isAuthenticated() -->
 				<sec:authorize access="isAuthenticated()">
+					<sec:authentication property="principal.member.user_no" var="sender_no"/>
+					<li>
+						<a href="<c:url value='/chattingPage/${sender_no}'/>">채팅하기</a>
+					</li>
 					<li>
 						<sec:authentication property="principal.member.user_name"/>
 					</li>

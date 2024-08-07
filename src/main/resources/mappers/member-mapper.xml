@@ -15,5 +15,12 @@
 			user_id = #{user_id}
 		</where>
 	</select>		 	
-
+	<select id="selectMemberNotSender" parameterType ="_int"
+	resultType="com.gn.spring.member.model.vo.Member">
+		SELECT `user_no`,`user_name`
+		FROM `user`
+		<where>
+			`user_no` != #{sender_no}
+		</where>
+	</select>
 </mapper>

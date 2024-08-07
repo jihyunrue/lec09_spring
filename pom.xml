@@ -170,6 +170,12 @@
 	    <artifactId>spring-security-taglibs</artifactId>
 	    <version>5.7.2</version>
 	</dependency>
+	<!-- Websocket 적용 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-websocket</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency> 
   </dependencies>
 
   <build>

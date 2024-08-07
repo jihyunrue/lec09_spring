@@ -1,5 +1,8 @@
 package com.gn.spring.member.model.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -26,5 +29,15 @@ public class MemberService {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public List<Member> selectMemberNotSender(int sender_no){
+		List<Member> resultList = new ArrayList<Member>();
+		try {
+			resultList = memberDao.selectMemberNotSender(sender_no);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return resultList;
 	}
 }

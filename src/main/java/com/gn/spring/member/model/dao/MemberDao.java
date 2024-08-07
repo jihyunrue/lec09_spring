@@ -1,5 +1,7 @@
 package com.gn.spring.member.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +25,9 @@ public class MemberDao {
 	
 	public Member selectMemberById(String user_id) {
 		return sqlSession.selectOne("memberMapper.selectMemberById",user_id);
+	}
+	
+	public List<Member> selectMemberNotSender(int sender_no){
+		return sqlSession.selectList("memberMapper.selectMemberNotSender",sender_no);
 	}
 }
